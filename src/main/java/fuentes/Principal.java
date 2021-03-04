@@ -13,8 +13,12 @@ public class Principal {
     public Principal(){
         int n = Integer.parseInt(JOptionPane.showInputDialog(
                 "Cuál término Fibonacci desea (n)?"));
+        double inicia = System.nanoTime();
         int fn = fibonacci(n);
-        JOptionPane.showMessageDialog(null, "El término Fibonacci(n): "+fn);
+        double termina = System.nanoTime();
+        double tiempo = (termina-inicia)/1E9;
+        JOptionPane.showMessageDialog(null, "El término Fibonacci(n): "+fn+
+                "\n Tiempo: "+tiempo);
     }
     public static void main(String[] args) {
         new Principal();
